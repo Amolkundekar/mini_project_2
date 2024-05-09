@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if(isset($_SESSION['user'])){
+
+
+
 // Initialize cart session if not set
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
@@ -8,6 +12,11 @@ if (!isset($_SESSION['cart'])) {
 $product_name = $_POST['pname'];
 $product_price = $_POST['pprice'];
 $product_quantity = $_POST['pquantity'];
+
+// $productPrice = (float)$value['productprice'];
+// $productQuantity = (int)$value['productquantity'];
+// $ptotal = $productPrice * $productQuantity;
+
 
 if(isset($_POST['addcart'])){
    
@@ -52,5 +61,13 @@ if(isset($_POST['update'])) {
             exit; // Stop further execution after redirecting
         }
     }
+}
+
+
+}
+
+else
+{
+    header("location:form/login.php");
 }
 ?>

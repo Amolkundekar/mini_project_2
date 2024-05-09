@@ -13,7 +13,7 @@
 </head>
 <body>
 <?php
-session_start();
+  session_start();
   $count = 0;
   if(isset($_SESSION['cart'])){
     $count = count($_SESSION['cart']);
@@ -21,7 +21,7 @@ session_start();
 ?>
 <nav class="navbar navbar-light bg-success">
   <div class="container-fluid font-monospace">
-    <a class="navbar-brand pb-2"><img src="logo.png" alt="logo" height=50 width= 150></a>
+    <a class="navbar-brand pb-2"><h1 class="text-white fw-bold ">Agrigrocer</h1></a>
 
     <div class="d-flex">
       <a href="index.php" class="text-white text-decoration-none pe-1"><i class="fa-solid fa-house"></i> HOME | </a>
@@ -29,9 +29,23 @@ session_start();
       <a href="viewcart.php" class="text-white text-decoration-none pe-1"><i class="fa-solid fa-cart-shopping"></i> CART (<?php echo $count?>) | </a>
 
       <span class="text-white">
-        <i class="fas fa-user-shield"></i> Hello, |
-        <a href="" class="text-white text-decoration-none "> <i class="fa-solid fa-right-to-bracket"></i> Login | </a>
-        <a href="../admin/mystore.php" class="text-white text-decoration-none "> Admin </a>
+        <i class="fas fa-user-shield"></i> Hello, 
+
+        <?php
+          // session_start();
+          if(isset($_SESSION['user'])){
+          echo $_SESSION['user'];
+          echo "<a href='form/logout.php' class='text-white text-decoration-none '> | <i class='fa-solid fa-right-to-bracket'></i> Logout | </a>";
+
+          }
+          else
+          {
+            echo "<a href='form/login.php' class='text-white text-decoration-none '>| <i class='fa-solid fa-right-to-bracket'></i> Login | </a>";
+          }
+        ?>
+
+        
+        <a href="../admin/mystore.php" class="text-white text-decoration-none  "> Admin </a>
       </span>
 
     </div>
@@ -39,7 +53,7 @@ session_start();
 </nav>
     
 
-<div class="bg-primary font-monospace">
+<div class="bg-primary sticky-top font-monospace">
   <ul class="list-unstyled d-flex justify-content-center">
     <li><a href="fruits.php" class="text-decoration-none text-white fw-bold fs-4 px-5">Fruits</a></li>
     <li><a href="vegetable.php" class="text-decoration-none text-white fw-bold fs-4 px-5">Vegetables</a></li>

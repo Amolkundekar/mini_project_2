@@ -59,6 +59,8 @@
                         <th>Image</th>
                         <th>Category</th>
                         <th>Delete</th>
+                        <th>Update</th>
+
                         
                     </thead>
                     
@@ -77,10 +79,12 @@
                                 <td>$row[pcategory]</td>
                                 
                                 <td>
-                                    <form action='delete.php' method='POST'>
-                                        <input type='hidden' name='product_id' value={$row['id']}>
-                                        <button type='submit' class='btn btn-danger'>Delete</button>
-                                    </form>
+                                <a href ='delete.php? ID=$row[id]' class = 'btn btn-danger'>Delete </a>
+                                </td>
+
+                                <td>
+                                    <a href ='update.php? ID=$row[id]' class = 'btn btn-warning'>Update </a>
+                                    
                                 </td>
                                 
 

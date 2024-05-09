@@ -1,18 +1,25 @@
 <?php
-include 'config.php';
+    include 'config.php';
+    $id = $_GET['ID'];
 
-if(isset($_POST['product_id'])) {
-    $product_id = $_POST['product_id'];
-
-    $query = "DELETE FROM `tblproduct` WHERE `id` = $product_id";
-
-    if(mysqli_query($con, $query)) {
-        header("location: index.php");
-        exit();
-    } else {
-        echo "Error deleting product: " . mysqli_error($con); // This will display the error message if deletion fails
+    if(mysqli_query($con, "DELETE FROM `tblproduct` WHERE id = $id"))
+    {
+        echo"
+        <script>
+        alert('product deleted sucessfully.');
+        window.location.href = 'index.php';
+        </script>
+        ";
+        // header("location:index.php");
     }
-} else {
-    echo "Product ID not set."; // This will display a message if product ID is not received
-}
+    else{
+        echo"
+        <script>
+        alert('product deletion failed.');
+        window.location.href = 'index.php';
+        </script>
+        ";
+        // header("location:index.php");
+    }
+    
 ?>

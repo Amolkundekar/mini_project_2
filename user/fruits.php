@@ -35,12 +35,12 @@
                         echo "
                         <div class='col-md-6 col-lg-4 m-auto mb-3' >
                             <form action ='insertcart.php' method='POST'>
-                                <div class='card m-auto' style='width: 18rem;'>
-                                <img src='../admin/product/$row[pimage]' width=287 height=192 class = 'card-image-top m-auto '>
+                                <div class='card m-auto shadow p-3 mb-5 bg-white rounded' style='width: 18rem;'>
+                                <img src='../admin/product/$row[pimage]' width=230 height=192 class = 'card-image-top m-auto '>
                                 <div class='card-body text-center '>
                                     <h5 class='card-title  fs-4 fw-bold'>$row[pname]</h5>
                                     
-                                    <p class='card-text  fs-6 fw-bold'> RS: $row[pprice]</p>
+                                    <p class='card-text  fs-6 fw-bold'> RS: $row[pprice] /kg</p>
                                     <input type='hidden' name='pname' value ='$row[pname]' >
                                     <input type='hidden' name='pprice' value ='$row[pprice]' >
                                     <input type='number' name='pquantity' value-'min='1' max ='20'' placeholder = 'Quantity'><br><br>
@@ -57,5 +57,9 @@
         </div>
     </div>
 </div>
+
+    <?php
+    include 'footer.php';
+    ?>
 </body>
 </html>

@@ -28,11 +28,11 @@
     </span>
   </div>
 </nav>
-    <div class="py-5">
+    <div class="py-7">
         <h2 class="text-center">Dashboard</h2>
         <div class="col-md-6 m-auto bg-primary text-center">
-            <a class="text-decoration-none text-white fs-4 fw-bold px-5" href="product/index.php">Add Post</a>
-            <a class="text-decoration-none text-white fs-4 fw-bold px-5" href="">Users</a>
+            <a class="text-decoration-none text-white fs-4 fw-bold px-5 " href="product/index.php">Add Post</a>
+            <a class="text-decoration-none text-white fs-4 fw-bold px-5 " href="users.php">Users</a>
         </div>
     </div>
 </body>
